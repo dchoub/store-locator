@@ -41,10 +41,9 @@ public class StoreController {
 		return store;
 	}
 
-	@RequestMapping(value = "/{storeid}", method = RequestMethod.PUT)
-	public void modifyStoreById(@PathVariable("storeid") String storeid, @Valid @RequestBody Store store) {
-		store.setStoreid(storeid);
-		// store.set_id(storeid);
+	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+	public void modifyStoreById(@PathVariable("id") ObjectId id, @Valid @RequestBody Store store) {
+		store.set_id(id);
 		repository.save(store);
 	}
 	
