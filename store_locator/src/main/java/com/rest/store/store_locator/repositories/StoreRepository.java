@@ -7,4 +7,6 @@ import org.bson.types.ObjectId;
 
 public interface StoreRepository extends MongoRepository<Store, String>{
 	Store findBy_id(ObjectId _id);
+	
+	
 }
