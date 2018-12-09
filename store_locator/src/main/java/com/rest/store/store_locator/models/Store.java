@@ -12,12 +12,12 @@ public class Store {
 	private String storename;
 	private String address;
 	private String postcode;
-	private String latitude;
-	private String longitude;
+	private double latitude;
+	private double longitude;
 	
 	
 	public Store() {}
-	public Store(ObjectId _id, String storeid, String storename, String address, String postcode, String latitude, String longitude) {
+	public Store(ObjectId _id, String storeid, String storename, String address, String postcode, double latitude, double longitude) {
 		this._id = _id;
 		this.storeid = storeid;
 		this.storename = storename;
@@ -57,16 +57,16 @@ public class Store {
 	public void setPostcode(String postcode) {
 		this.postcode = postcode;
 	}
-	public String getLatitude() {
+	public double getLatitude() {
 		return latitude;
 	}
-	public void setLatitude(String latitude) {
+	public void setLatitude(double latitude) {
 		this.latitude = latitude;
 	}
-	public String getLongitude() {
+	public double getLongitude() {
 		return longitude;
 	}
-	public void setLongitude(String longitude) {
+	public void setLongitude(double longitude) {
 		this.longitude = longitude;
 	}
 	
