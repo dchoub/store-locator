@@ -9,6 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Scope;
 
 import com.rest.store.store_locator.geocode.GeocodeService;
+import com.rest.store.store_locator.services.StoreService;
 
 @SpringBootApplication
 @ComponentScan
@@ -23,6 +24,16 @@ public class StoreLocatorApplication {
 	@ConfigurationProperties(prefix = "config")
 	public GeocodeService getGeocodeService() {
 		GeocodeService service = new GeocodeService();
+		return service;
+	}
+	
+	
+
+	@Bean(name = "storeService")
+	@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+	@ConfigurationProperties(prefix = "config")
+	public StoreService getStoreService() {
+		StoreService service = new StoreService();
 		return service;
 	}
 	
