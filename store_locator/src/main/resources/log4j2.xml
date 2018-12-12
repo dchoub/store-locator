@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug" name="baeldung" packages="">
+	<Appenders>
+		<File name="fout" fileName="fileout.log" append="true">
+			<PatternLayout>
+				<Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %m%nw</Pattern>
+			</PatternLayout>
+		</File>
+		<File name="info" fileName="info.log" append="true">
+			<PatternLayout>
+				<Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %m%nw</Pattern>
+			</PatternLayout>
+		</File>
+		<File name="error" fileName="error.log" append="true">
+			<PatternLayout>
+				<Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %m%nw</Pattern>
+			</PatternLayout>
+		</File>
+		<File name="debug" fileName="debug.log" append="true">
+			<PatternLayout>
+				<Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %m%nw</Pattern>
+			</PatternLayout>
+		</File>
+	</Appenders>
+	<Loggers>
+	<logger name="com.rest.store.store_locator" additivity="false">
+   <appender-ref ref="info"/>
+   <appender-ref ref="error"/>
+    <appender-ref ref="info"/>
+   <appender-ref ref="debug"/>
+</logger>
+
+		<root>
+        <level value="INFO" />
+        <appender-ref ref="info" />
+        <level value="ERROR" />
+        <appender-ref ref="error" />
+        <level value="DEBUG" />
+        <appender-ref ref="debug" />
+    </root>
+	</Loggers>
+</Configuration>

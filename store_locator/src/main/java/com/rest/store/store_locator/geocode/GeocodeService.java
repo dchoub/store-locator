@@ -29,6 +29,19 @@ public class GeocodeService {
 		return geocode;
 	}
 
+	public LatLng getGeocodeByPostcode(String postcode) {
+		initializeGeoApiContext();
+		GeocodingResult[] results = null;
+		LatLng geocode = null;
+		try {
+			results = GeocodingApi.geocode(context, postcode).await();
+			geocode = results[0].geometry.location;
+		} catch (Exception e) {
+
+		}
+		return geocode;
+	}
+	
 	public void setContext(GeoApiContext context) {
 		this.context = context;
 	}
