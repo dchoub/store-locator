@@ -9,6 +9,10 @@
 .settings
 .springBeans
 .sts4-cache
+debug.log
+info.log
+error.log
+fileout.log
 
 ### IntelliJ IDEA ###
 .idea
